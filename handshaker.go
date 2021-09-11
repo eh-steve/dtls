@@ -98,6 +98,7 @@ type handshakeConfig struct {
 	serverName                        string
 	supportedProtocols                []string
 	clientAuth                        ClientAuthType // If we are a client should we request a client certificate
+	getCertificateFunc                func(*tls.ClientHelloInfo) (*tls.Certificate, error)
 	localCertificates                 []tls.Certificate
 	nameToCertificate                 map[string]*tls.Certificate
 	insecureSkipVerify                bool
