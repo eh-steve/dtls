@@ -47,6 +47,6 @@ func TestFingerprint(t *testing.T) {
 func TestFingerprint_UnavailableHash(t *testing.T) {
 	_, err := Fingerprint(&x509.Certificate{}, crypto.Hash(0xFFFFFFFF))
 	if !errors.Is(err, errHashUnavailable) {
-		t.Errorf("%w: Expected error '%v' for invalid hash ID, got '%v'", errInvalidHashID, errHashUnavailable, err)
+		t.Errorf("%s: Expected error '%v' for invalid hash ID, got '%v'", errInvalidHashID, errHashUnavailable, err)
 	}
 }
